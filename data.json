@@ -1,0 +1,81 @@
+[
+  {
+    "id":"r1",
+    "name":"Starbucks",
+    "address":"C. Principal 12",
+    "distance":"450 m",
+    "timeLeftMin":25,
+    "phone":"+598 99 123 001",
+    "items":[
+      {"name":"Café grande + muffin","qty":4,"originalPrice":300,"offerPrice":195},
+      {"name":"Sándwich de pollo","qty":2,"originalPrice":420,"offerPrice":273}
+    ]
+  },
+  {
+    "id":"r2",
+    "name":"Panadería La Loma",
+    "address":"Av. Flores 8",
+    "distance":"300 m",
+    "timeLeftMin":15,
+    "phone":"+598 99 123 002",
+    "items":[
+      {"name":"Baguette artesana","qty":6,"originalPrice":120,"offerPrice":72},
+      {"name":"Croissant mantequilla","qty":5,"originalPrice":80,"offerPrice":48}
+    ]
+  },
+  {
+    "id":"r3",
+    "name":"Taquería El Sabor",
+    "address":"Plaza 4",
+    "distance":"750 m",
+    "timeLeftMin":30,
+    "phone":"+598 99 123 003",
+    "items":[
+      {"name":"Tacos (3 uds)","qty":8,"originalPrice":450,"offerPrice":293}
+    ]
+  },
+  {
+    "id":"r4",
+    "name":"Pizzería Don Pepe",
+    "address":"C. Roma 21",
+    "distance":"1.1 km",
+    "timeLeftMin":20,
+    "phone":"+598 99 123 004",
+    "items":[
+      {"name":"Porción de pepperoni","qty":10,"originalPrice":250,"offerPrice":175}
+    ]
+  },
+  {
+    "id":"r5",
+    "name":"Sushi Koi",
+    "address":"Muelle 5",
+    "distance":"900 m",
+    "timeLeftMin":10,
+    "phone":"+598 99 123 005",
+    "items":[
+      {"name":"Caja de 8 nigiris","qty":3,"originalPrice":1200,"offerPrice":720}
+    ]
+  },
+  {
+    "id":"r6",
+    "name":"Restaurante Casa Verde",
+    "address":"Bosque 3",
+    "distance":"2.0 km",
+    "timeLeftMin":30,
+    "phone":"+598 99 123 006",
+    "items":[
+      {"name":"Menú degustación (2 pers)","qty":1,"originalPrice":4500,"offerPrice":3150}
+    ]
+  },
+  {
+    "id":"r7",
+    "name":"Café La Esquina",
+    "address":"C. Luna 7",
+    "distance":"120 m",
+    "timeLeftMin":12,
+    "phone":"+598 99 123 007",
+    "items":[
+      {"name":"Tarta del día","qty":4,"originalPrice":350,"offerPrice":228}
+    ]
+  }
+]

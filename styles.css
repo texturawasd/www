@@ -1,0 +1,62 @@
+:root{
+  --beige: #F5ECE0;
+  --green: #2F6F3E; /* bosque */
+  --orange: #FF7A18; /* acento */
+  --muted: #6B6B6B;
+  --card: #FFFFFF;
+}
+*{box-sizing:border-box}
+body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--beige);color:#222}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:transparent}
+.brand h1{margin:0;font-size:22px;color:var(--green)}
+.brand .tag{margin:4px 0 0;color:var(--muted);font-size:13px}
+.controls{display:flex;align-items:center;gap:8px}
+select{padding:8px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:#fff}
+
+.controls .btn{padding:8px 10px;border-radius:10px;background:transparent;border:1px solid rgba(0,0,0,0.06)}
+.controls .btn:hover{background:#fff8f2}
+
+.layout{display:block;padding:14px}
+.list-panel{width:100%;max-width:720px;margin:0 auto;padding-bottom:120px} /* extra space so bottom popup doesn't cover content */
+.cards{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);padding:14px;border-radius:14px;box-shadow:0 6px 18px rgba(38,31,24,0.06);display:flex;justify-content:space-between;align-items:flex-start}
+.card .badge-discount{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:10px;background:#FFE9D6;color:var(--orange);font-weight:700;font-size:12px}
+.card .meta{max-width:65%}
+.card h3{margin:0 0 6px 0}
+.badge{display:inline-block;padding:6px 8px;border-radius:12px;background:var(--green);color:#fff;font-weight:600;font-size:12px}
+.price{font-weight:700;color:var(--orange)}
+.item-list{margin:8px 0 0 0;padding:0;list-style:none}
+.item-list li{display:flex;justify-content:space-between;padding:6px 0;border-top:1px dashed rgba(0,0,0,0.04)}
+.btn{padding:8px 12px;border-radius:10px;border:0;background:transparent;cursor:pointer}
+.btn.primary{background:var(--green);color:#fff}
+.btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+.btn + .btn{margin-left:8px}
+
+/* ignore button inside item row */
+.item-list li{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px dashed rgba(0,0,0,0.04)}
+.item-actions{display:flex;gap:8px;align-items:center}
+.btn.ignore{background:transparent;color:var(--muted);padding:6px;border-radius:8px;font-size:13px}
+.btn.ignore:hover{background:rgba(0,0,0,0.04)}
+.live-note{margin-top:10px;color:var(--muted);font-size:13px;text-align:center}
+
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)}
+.modal.hidden{display:none}
+.modal-card{background:var(--card);padding:18px;border-radius:14px;width:320px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+
+/* Centered orange popup notice */
+.popup-notice{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(8px);width:90%;max-width:420px;background:var(--orange);color:#fff;border-radius:14px;padding:16px;box-shadow:0 14px 40px rgba(0,0,0,0.18);opacity:0;transition:all 260ms ease}
+.popup-notice.visible{opacity:1;transform:translateX(-50%) translateY(0)}
+.popup-notice .notice-content{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.popup-notice strong{font-size:18px}
+
+
+@media(max-width:900px){
+  body{padding:0}
+  .site-header{padding:12px}
+  .brand h1{font-size:20px}
+  .list-panel{padding:8px}
+}
+
+/* Make page naturally scrollable for mobile */
+html,body{height:100%}

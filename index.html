@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SaveBite — Ofertas de último momento</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <h1>SaveBite</h1>
+        <p class="tag">Ofertas de último minuto en tus restaurantes cercanos</p>
+      </div>
+      <div class="controls">
+        <label for="demoAccount">Cuenta demo:</label>
+        <select id="demoAccount"></select>
+        <button id="notifBtn" class="btn" title="Ver notificaciones">Notificaciones</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="list-panel">
+        <h2>Ofertas espontáneas (últimos 30 min)</h2>
+        <div id="restaurants" class="cards"></div>
+        <div class="live-note">Avisos espontáneos: aparecen cuando quedan menos de 30 minutos.</div>
+      </section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <h3 id="modal-title"></h3>
+        <p id="modal-body"></p>
+        <div class="modal-actions">
+          <button id="confirmReserve" class="btn primary">Reservar</button>
+          <button id="cancelReserve" class="btn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="notifModal" class="modal hidden">
+      <div class="modal-card">
+        <h3>Notificaciones</h3>
+        <div id="notifList" style="max-height:320px;overflow:auto;margin-top:8px"></div>
+        <div class="modal-actions">
+          <button id="closeNotif" class="btn">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
