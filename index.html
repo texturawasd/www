@@ -7,15 +7,43 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div id="loginScreen" class="login-screen">
+      <div class="login-card">
+        <h2>Bienvenido a SaveBite</h2>
+        <label class="lbl">Email
+          <input id="loginEmail" type="email" placeholder="tu@ejemplo.com" />
+        </label>
+        <label class="lbl">Contraseña (mín 8 caracteres)
+          <input id="loginPassword" type="password" minlength="8" placeholder="********" />
+        </label>
+        <div class="login-actions">
+          <button id="generateDemo" class="btn">Generar demo</button>
+          <button id="loginBtn" class="btn primary">Iniciar sesión</button>
+        </div>
+        <div style="margin-top:8px;text-align:center">
+          <button id="businessBtn" class="btn business">¿Eres un negocio? Click aquí</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="appContent">
     <header class="site-header">
       <div class="brand">
-        <h1>SaveBite</h1>
-        <p class="tag">Ofertas de último minuto en tus restaurantes cercanos</p>
+        <div class="logo">SB</div>
+        <div>
+          <h1 class="title">SaveBite</h1>
+          <p class="tag small">Ofertas de último minuto en tus restaurantes cercanos</p>
+        </div>
       </div>
       <div class="controls">
-        <label for="demoAccount">Cuenta demo:</label>
-        <select id="demoAccount"></select>
-        <button id="notifBtn" class="btn" title="Ver notificaciones">Notificaciones</button>
+        <button id="menuBtn" class="btn" aria-label="Menu">☰</button>
+        <div class="profile-wrap">
+          <button id="profileBtn" class="btn profile" aria-label="Perfil">👤</button>
+          <div id="profileMenu" class="dropdown hidden">
+            <div id="profileName" style="font-weight:700"></div>
+            <div id="profileId" style="color:var(--muted);font-size:13px;margin-top:4px"></div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -46,6 +74,64 @@
           <button id="closeNotif" class="btn">Cerrar</button>
         </div>
       </div>
+    </div>
+
+    <div id="purchaseModal" class="modal hidden">
+      <div class="modal-card">
+        <h3>Historial de compras (último mes)</h3>
+        <div id="purchaseList" style="max-height:360px;overflow:auto;margin-top:8px"></div>
+        <div class="modal-actions">
+          <button id="closePurchase" class="btn">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="menuDropdown" class="dropdown hidden">
+      <div class="dropdown-item" id="menuNotif">Notificaciones</div>
+      <div class="dropdown-item" id="menuHistory">Historial de compras</div>
+      <div class="dropdown-item" id="menuLogout">Cerrar sesión</div>
+    </div>
+
+    <!-- Business full-screen login/register -->
+    <div id="businessScreen" class="login-screen hidden">
+      <div class="login-card">
+        <h2>Ingreso / Registro — Negocio</h2>
+        <label class="lbl">Email
+          <input id="bizEmail" type="email" placeholder="negocio@ejemplo.com" />
+        </label>
+        <label class="lbl">Contraseña (mín 8 caracteres)
+          <input id="bizPassword" type="password" minlength="8" placeholder="********" />
+        </label>
+        <label class="lbl">Nombre del negocio
+          <input id="bizName" type="text" placeholder="Panadería La Loma" />
+        </label>
+        <label class="lbl">Dirección
+          <input id="bizAddress" type="text" placeholder="Av. Ejemplo 123" />
+        </label>
+        <label class="lbl">Teléfono
+          <input id="bizPhone" type="tel" placeholder="+598 99 123 456" />
+        </label>
+        <label class="lbl">Categoría
+          <input id="bizCategory" type="text" placeholder="Cafetería" />
+        </label>
+        <div class="login-actions">
+          <button id="bizBack" class="btn">Volver</button>
+          <button id="bizDemo" class="btn">Agregar demo</button>
+          <button id="bizRegister" class="btn primary">Entrar</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Business dashboard (visible after business login) -->
+    <div id="bizDashboard" class="panel hidden" style="padding:18px;max-width:900px;margin:18px auto;border-radius:12px;background:var(--card)">
+      <h2>Panel del negocio</h2>
+      <div id="bizInfo" style="margin-top:6px;color:var(--muted)"></div>
+      <div class="login-actions" style="margin-top:12px">
+        <button id="bizAddOffer" class="btn">Agregar oferta</button>
+        <button id="bizClosePanel" class="btn">Cerrar panel</button>
+      </div>
+      <div id="bizOffers" style="margin-top:14px"></div>
     </div>
 
     <script src="app.js"></script>

@@ -8,13 +8,21 @@
 *{box-sizing:border-box}
 body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--beige);color:#222}
 .site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:transparent}
-.brand h1{margin:0;font-size:22px;color:var(--green)}
-.brand .tag{margin:4px 0 0;color:var(--muted);font-size:13px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:56px;height:56px;background:linear-gradient(180deg,#fff,#fff8f0);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--green);font-size:20px;box-shadow:0 6px 18px rgba(38,31,24,0.04)}
+.title{margin:0;font-size:20px;color:var(--green)}
+.brand .tag{margin:4px 0 0;color:var(--muted);font-size:12px}
+.brand .small{font-size:12px}
 .controls{display:flex;align-items:center;gap:8px}
 select{padding:8px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:#fff}
 
 .controls .btn{padding:8px 10px;border-radius:10px;background:transparent;border:1px solid rgba(0,0,0,0.06)}
 .controls .btn:hover{background:#fff8f2}
+.profile-wrap{position:relative}
+.dropdown{position:absolute;right:0;top:44px;background:var(--card);border-radius:10px;padding:10px;box-shadow:0 8px 20px rgba(0,0,0,0.12);z-index:60}
+.dropdown.hidden{display:none}
+.dropdown-item{padding:10px 12px;border-radius:8px;cursor:pointer}
+.dropdown-item:hover{background:rgba(0,0,0,0.04)}
 
 .layout{display:block;padding:14px}
 .list-panel{width:100%;max-width:720px;margin:0 auto;padding-bottom:120px} /* extra space so bottom popup doesn't cover content */
@@ -32,9 +40,14 @@ select{padding:8px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);backgrou
 .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
 .btn + .btn{margin-left:8px}
 
+/* icon button */
+.btn.icon{padding:8px;width:40px;height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px}
+
 /* ignore button inside item row */
 .item-list li{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px dashed rgba(0,0,0,0.04)}
-.item-actions{display:flex;gap:8px;align-items:center}
+.item-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.aside{display:flex;flex-direction:column;align-items:flex-end;gap:10px;min-width:120px}
+.badge{align-self:flex-end}
 .btn.ignore{background:transparent;color:var(--muted);padding:6px;border-radius:8px;font-size:13px}
 .btn.ignore:hover{background:rgba(0,0,0,0.04)}
 .live-note{margin-top:10px;color:var(--muted);font-size:13px;text-align:center}
@@ -60,3 +73,25 @@ select{padding:8px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);backgrou
 
 /* Make page naturally scrollable for mobile */
 html,body{height:100%}
+
+/* Login screen */
+.login-screen{position:fixed;inset:0;background:linear-gradient(180deg,var(--beige),#fff);display:flex;align-items:center;justify-content:center;padding:20px;z-index:80}
+.login-card{width:100%;max-width:420px;background:var(--card);padding:20px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,0.08);text-align:left}
+.login-card h2{margin:0 0 12px 0;color:var(--green)}
+.login-card .lbl{display:block;margin:8px 0;font-size:13px;color:var(--muted)}
+.login-card input{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);margin-top:6px}
+.login-actions{display:flex;justify-content:space-between;gap:8px;margin-top:12px}
+.login-screen.hidden{display:none}
+
+/* hide app while login */
+#appContent.hidden{display:none}
+
+/* hide biz dashboard when marked hidden */
+#bizDashboard.hidden{display:none}
+
+/* business button styling */
+.btn.business{background:var(--green);color:#fff;padding:8px 10px;border-radius:8px;font-size:13px}
+.btn.business:hover{opacity:0.95}
+
+/* business modal adjustments reuse .modal and .modal-card */
+.modal .modal-card input{margin-top:6px}
