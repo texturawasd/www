@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>SaveBite — Ofertas de último momento</title>
     <link rel="stylesheet" href="styles.css" />
+      <link rel="icon" href="leaf-transparent.png" type="image/png" />
   </head>
   <body>
     <div id="loginScreen" class="login-screen">
@@ -15,6 +16,12 @@
         </label>
         <label class="lbl">Contraseña (mín 8 caracteres)
           <input id="loginPassword" type="password" minlength="8" placeholder="********" />
+        </label>
+        <label class="lbl">Nombre
+          <input id="loginName" type="text" placeholder="Tu nombre completo (opcional)" />
+        </label>
+        <label class="lbl">Teléfono
+          <input id="loginPhone" type="tel" placeholder="+598 99 123 456 (opcional)" />
         </label>
         <div class="login-actions">
           <button id="generateDemo" class="btn">Generar demo</button>
@@ -29,7 +36,7 @@
     <div id="appContent">
     <header class="site-header">
       <div class="brand">
-        <div class="logo">SB</div>
+        <div class="logo"><img src="leaf.png" alt="SaveBite logo" /></div>
         <div>
           <h1 class="title">SaveBite</h1>
           <p class="tag small">Ofertas de último minuto en tus restaurantes cercanos</p>
@@ -40,8 +47,9 @@
         <div class="profile-wrap">
           <button id="profileBtn" class="btn profile" aria-label="Perfil">👤</button>
           <div id="profileMenu" class="dropdown hidden">
-            <div id="profileName" style="font-weight:700"></div>
-            <div id="profileId" style="color:var(--muted);font-size:13px;margin-top:4px"></div>
+              <div id="profileName" style="font-weight:700"></div>
+              <div id="profilePhone" style="color:var(--muted);font-size:13px;margin-top:4px"></div>
+              <div id="profileId" style="color:var(--muted);font-size:13px;margin-top:4px"></div>
           </div>
         </div>
       </div>

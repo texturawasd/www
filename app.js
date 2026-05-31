@@ -99,7 +99,15 @@ async function load(){
   // wire profile/menu buttons (profile info set after login)
   const profileBtn = document.getElementById('profileBtn');
   const profileMenu = document.getElementById('profileMenu');
-  profileBtn.onclick = ()=>{ profileMenu.classList.toggle('hidden'); };
+  profileBtn.onclick = ()=>{
+    // ensure profile info is fresh when opening the menu
+    if(currentUser){
+      document.getElementById('profileName').textContent = currentUser.fullName || '';
+      document.getElementById('profilePhone').textContent = currentUser.phone ? `Tel: ${currentUser.phone}` : '';
+      document.getElementById('profileId').textContent = `ID: ${currentUser.id}`;
+    }
+    profileMenu.classList.toggle('hidden');
+  };
   const menuBtn = document.getElementById('menuBtn');
   const menuDropdown = document.getElementById('menuDropdown');
   menuBtn.onclick = ()=>{ menuDropdown.classList.toggle('hidden'); };
@@ -267,8 +275,12 @@ function login(){
   const email = (document.getElementById('loginEmail').value||'').trim();
   const pass = (document.getElementById('loginPassword').value||'').trim();
   if(!email || pass.length<8){ alert('Introduce un email válido y una contraseña de al menos 8 caracteres.'); return; }
-  currentUser = { fullName: email.split('@')[0], id: String(Math.floor(1000000000 + Math.random()*9000000000)) };
+  const nameInput = (document.getElementById('loginName').value||'').trim();
+  const phoneInput = (document.getElementById('loginPhone').value||'').trim();
+  const derivedName = nameInput || email.split('@')[0];
+  currentUser = { fullName: derivedName, name: derivedName, phone: phoneInput || '', id: String(Math.floor(1000000000 + Math.random()*9000000000)) };
   document.getElementById('profileName').textContent = currentUser.fullName;
+  document.getElementById('profilePhone').textContent = currentUser.phone ? `Tel: ${currentUser.phone}` : '';
   document.getElementById('profileId').textContent = `ID: ${currentUser.id}`;
   // ensure business dashboard is hidden for normal users
   document.getElementById('bizDashboard').classList.add('hidden');
@@ -303,6 +315,7 @@ function logout(){
   document.getElementById('loginScreen').classList.remove('hidden');
   // clear profile display
   document.getElementById('profileName').textContent = '';
+  document.getElementById('profilePhone').textContent = '';
   document.getElementById('profileId').textContent = '';
 }
 
@@ -352,8 +365,15 @@ function simulateRealtime(){
           const offer = Math.round(base * (1 - disc/100));
           // set time between 10 and 25 minutes
           const timeMin = 10 + Math.floor(Math.random()*16); // 10..25
-          target.items.push({name, qty: 3 + Math.floor(Math.random()*5), originalPrice: base, offerPrice: offer});
+          const newItem = {name, qty: 3 + Math.floor(Math.random()*5), originalPrice: base, offerPrice: offer};
+          target.items.push(newItem);
           target.timeLeftMin = timeMin;
+          // Notify users about the new spontaneous offer
+          try{
+            showNotification(target, newItem);
+          }catch(e){
+            console.error('Failed to show notification for new offer', e);
+          }
         }
       }
     });

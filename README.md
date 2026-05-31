@@ -1,4 +1,4 @@
-# SaveBite — Demo Hackathon
+# SaveBite - Demo Hackathon
 
 Pequeña SPA estática para demo de 5 minutos: restaurantes publican ofertas de último minuto para evitar desperdicio.
 
@@ -6,11 +6,9 @@ Cómo abrir (modo rápido):
 
 1. Abrir `index.html` en un navegador.
 2. O servir con un servidor estático (recomendado):
-
+desde la raíz del repo para luego abrir http://localhost:8000
 ```bash
-# desde la raíz del repo
 python3 -m http.server 8000
-# luego abrir http://localhost:8000
 ```
 
 Paleta (estética relajada, formas redondeadas):
@@ -24,7 +22,6 @@ Contenido incluido:
 - `styles.css` — tema y componentes visuales (vista scrolleable).
 - `app.js` — lógica de carga, reservas demo, moneda en pesos uruguayos (UYU) y simulación en tiempo real.
 - `data.json` — 7 restaurantes de ejemplo y sus ofertas (tiempo en minutos, ofertas <=30 min).
-- `PITCH.md` — guion sugerido para la presentación de 5 minutos.
 
 
 

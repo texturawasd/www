@@ -7,19 +7,20 @@
 }
 *{box-sizing:border-box}
 body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--beige);color:#222}
-.site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:transparent}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:var(--green);color:#ffffff}
 .brand{display:flex;align-items:center;gap:12px}
-.logo{width:56px;height:56px;background:linear-gradient(180deg,#fff,#fff8f0);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--green);font-size:20px;box-shadow:0 6px 18px rgba(38,31,24,0.04)}
-.title{margin:0;font-size:20px;color:var(--green)}
-.brand .tag{margin:4px 0 0;color:var(--muted);font-size:12px}
+.logo{width:56px;height:56px;background:linear-gradient(180deg,#fff,#fff8f0);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--green);font-size:20px;box-shadow:0 6px 18px rgba(38,31,24,0.06)}
+.logo img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block}
+.title{margin:0;font-size:20px;color:#ffffff}
+.brand .tag{margin:4px 0 0;color:rgba(255,255,255,0.9);font-size:12px}
 .brand .small{font-size:12px}
 .controls{display:flex;align-items:center;gap:8px}
 select{padding:8px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:#fff}
 
-.controls .btn{padding:8px 10px;border-radius:10px;background:transparent;border:1px solid rgba(0,0,0,0.06)}
-.controls .btn:hover{background:#fff8f2}
+.controls .btn{padding:8px 10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#ffffff}
+.controls .btn:hover{background:rgba(255,255,255,0.06)}
 .profile-wrap{position:relative}
-.dropdown{position:absolute;right:0;top:44px;background:var(--card);border-radius:10px;padding:10px;box-shadow:0 8px 20px rgba(0,0,0,0.12);z-index:60}
+.dropdown{position:absolute;right:0;top:44px;background:var(--card);border-radius:10px;padding:10px;box-shadow:0 8px 20px rgba(0,0,0,0.12);z-index:60;color:#222;min-width:220px;max-width:360px;text-align:left}
 .dropdown.hidden{display:none}
 .dropdown-item{padding:10px 12px;border-radius:8px;cursor:pointer}
 .dropdown-item:hover{background:rgba(0,0,0,0.04)}
@@ -41,7 +42,7 @@ select{padding:8px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);backgrou
 .btn + .btn{margin-left:8px}
 
 /* icon button */
-.btn.icon{padding:8px;width:40px;height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px}
+.btn.icon{padding:8px;width:40px;height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;color:inherit}
 
 /* ignore button inside item row */
 .item-list li{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px dashed rgba(0,0,0,0.04)}

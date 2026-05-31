@@ -1,0 +1,201 @@
+# Prompts guardadas
+
+
+vamos a crear una app para un hackathon 
+la app trata de  una plataforma donde los restaurantes publican, en tiempo real, los productos que les sobran al final de la jornada y que de otro modo terminarían en la basura. Los usuarios pueden descubrir estas ofertas cercanas, reservarlas y comprarlas a precios reducidos antes del cierre.
+
+precisamos que crees el esqueleto del repo con un diseño con una paleta de colores: verde + naranja + beige (beige siendo el colo principal, verde bosue para los detalles y naranja para acentos o detalles.) 
+(obviamente, es una app web)
+
+notas:
+la estetica debe ser relajada (ej: las formas geometricas siendo redondeadas)
+
+debe ser intuitivo de usar
+(aun no un real sistema de cuentas, usaremos "cuentas demo" que sea el punto de vista de un usuario, que tenga 7 restaurantes de ejemplo (ej starbucks, panaderia la loma, etc)
+tene en cuenta que el pitch/demo se debe dar en 5 minutos 
+
+
+-------------------------
+
+
+que este en pesos uruguayos
+
+hazlo que sea vertical, scrolleable (para celulares moviles)
+que sean avisos espontaneas que salen que no tienen mas de 30 mins
+
+porque:
+en realidad la app funciona para:
+los restaurantes que estan cerrando y les sobro comida por el dia, la "rematan" o venden barata espontaneamente en nuestra app en vez de tirarla
+
+quita lo del mapa 
+
+
+------------------------
+
+
+
+precios realistas para pesos uruguayos 
+
+añade una opcion (mock) para contactar a cada negocio (nro de telefono)
+
+que varien descuentos (De ejemplo) entre 30, 35 40 %
+
+tambien notificacions que aparezcan en en un cuadrado naranja, centrado en la pantalla igual q las cards, que tenga un simbolo de un reloj y la hora de retiro ej: 18:42 para retirar
+
+
+
+------------------------
+
+
+cambia el nombre a "SaveBite"
+
+la notificacion naranja este abajo del todo, y no tape (se superponga) a nada
+y que solo aparezca cuando el usuario toque "reservar"
+
+
+
+--------------------------
+
+
+
+implementa un boton de notificaciones para rever las notificaciones que ya se desvanecieron
+
+hace que vayan apareciendo nuevas ofertas esporadicamente, o en el caso de que se de que no haya ninguna oferta disponible, q diga "no hay ofertas ahora"
+
+tambien añade limites sensatos: minimo tiempo de 10 minutos y maximo de 25
+
+
+
+
+-----------------------------
+
+
+añade un boton (con icono de X o ojo cerrado) para ignorar/rechazar una oferta
+
+
+-----------------------------------
+
+
+el boton de ignorar deberia ir solo una vez por card de oferta de restaurante-negocio (como el boton de reservar)
+
+
+
+--------------------------------------
+
+
+qeremos que en la parte superior izquierda, aparezca el logo de SaveBite, que sea un poco grande y tenga presencia sin llamar demasiado la atencion. La frase que esta debajo del titulo que disminuya su tamaño. Que en vez de que aparezca: "cuenta demo" que apartezca el clasico icono de perfil y que este tenga un menu desplegable que te muestre tu nombre completo y un id random de 10 digitos sin letras. Que haya un menu desplegable, con el icono de las clasicas tres rayitas arriba a la derecha al lado del icono de perfil que tambien esta arriba a la derecha en la pantalla. Este menu de 3 rayitas tiene el apartado de notificaciones, un historial de compras con los pedidos reserevados que no sean mas de un mes de antiguedad y que te ofrezca cerrar sesion.
+
+
+
+---------------------------------------------------
+
+
+
+Agrega una pantalla al inicio que tenga la cuenta de usuario con maily contraseña de 8 caracteres. Que el boton de cerrar sesion agregado previamente,  nos lleve otras vez a esta ventana de login
+
+
+
+--------------------------------------------------
+
+
+
+En el login agrega un boton abajo del boton de log in que diga "¿Eres un negocio? Click aqui" que esto aparezca resaltado en verde pasto pero que sea chico. Que una vez que apretas ese boton se te abra una ventana muy parecida del Log In del usuario, solo que ademas de Gmail y contraseña pida  el nombre del negocio, una direccion, un telefono, y categoria del negocio por ejemplo cafeteria. (todavia no agregues menu para el negocio despues de hacer click en log in"
+
+
+
+
+----------------------------------------------------
+
+
+
+que el boton de contactar sea nada mas que eel icono de un telefono en lugar de la palabra 
+arregla las alineaciones en las cards de las ofertas:
+que los elementos:
+nnm (los minutos) reservar, contactar, ignorrar, y los descuents esten snapeados para la derecha
+
+
+
+-----------------------------------------------------
+
+
+
+hace que el boton de eres un negocio te lleve a otra pantalla de login q te pida la info en vez de hacerlo despues luego de un login normal
+
+
+
+-----------------------------------------------------
+
+
+
+metele un agregar demo al apartado del login de eres un negocio
+
+
+
+-------------------------------------------------------
+
+
+
+cambialo a login en vez de registro en el apartado de eres un negocio, y que te lleve al dashboard del negocio (ahora (incorrectamente) te lleva de nuevo al login normal)
+
+
+
+-----------------------------------------------------------
+
+
+
+haz que cuando estas loggeado como un negocio, que no te aparezcan las ofertas de otros negocios (el punto es hacer ofertas no ver la existo entes)
+o sea
+cuando estas loggeado como un negocio, saca la parte de ofertas espontaneas por completo
+
+importante:
+cuando estas loggeado como un usuario normal, que la parte de "panel de negocio" tampoco aparezca
+
+
+Para que quede claro:
+
+Si soy un negocio:
+no aparecen ofertas espontaneas. 
+Solo aparece el panel de negocio
+
+Si soy un usuario normal:
+aperecen las ofertas espontaneas, pero no el panel de negocio
+
+
+
+----------------------------------------------------------------
+
+
+
+okay, ahore en el modo negocio, aparece el panel de negocio (bien) y NO aparecen las ofertas (bien)
+
+pero:
+en el modo usuario normal:
+aparecen las ofertas (bien) pero sigue apareciendo en panel de negocios abajo del todo (mal) 
+el usuario normal no debe tener acceso al panel de negocio
+
+
+
+----------------------------------------------------------------
+
+
+
+que cuano el usuario se loggea como usuario normal y no un negocio, que ***no*** tenga un panel de negocio. se sigue viendo
+
+(firefox, simulando un celular (vertical) el zoom no cambia ()(no uses localstorage)
+
+
+
+---------------------------------------------------------------
+
+
+
+ok, ahora cambia el estilo un poco:
+añade una barra superior vedre (del verde bosque y haz el texto legible (blanco))
+
+
+
+----------------------------------------------------------------
+
+
+
+cambia el placeholder de logo ("SB") por leaf.png
