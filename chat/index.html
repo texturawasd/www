@@ -189,13 +189,15 @@ async function ask() {
 
                     status.textContent = "";
 
-                    // Save the answer with prompt
-                    await saveAnswer(prompt, markdown);
-
                 }
 
             }
 
+        }
+
+        // Save after entire stream is done
+        if (markdown && prompt) {
+            await saveAnswer(prompt, markdown);
         }
 
     }
@@ -213,6 +215,7 @@ async function ask() {
 }
 
 async function saveAnswer(prompt, answer) {
+    console.log("Attempting to save - prompt:", prompt.length, "chars, answer:", answer.length, "chars");
     try {
         const response = await fetch("/chat/api/save", {
             method: "POST",
@@ -222,8 +225,14 @@ async function saveAnswer(prompt, answer) {
             body: JSON.stringify({ prompt, answer })
         });
 
+        const responseText = await response.text();
+        console.log("Save response status:", response.status);
+        console.log("Save response:", responseText);
+
         if (!response.ok) {
-            console.error("Failed to save answer");
+            console.error("Failed to save answer:", response.status, responseText);
+        } else {
+            console.log("Answer saved successfully!");
         }
     } catch (e) {
         console.error("Error saving answer:", e);

@@ -27,6 +27,8 @@ function formatSaveContent(prompt, answer) {
 }
 
 const server = http.createServer((req, res) => {
+    console.log(`${req.method} ${req.url}`);
+
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -40,6 +42,7 @@ const server = http.createServer((req, res) => {
 
     // Handle save endpoint
     if (req.url === '/chat/api/save' && req.method === 'POST') {
+        console.log("Save endpoint called");
         let body = '';
 
         req.on('data', chunk => {
@@ -48,8 +51,11 @@ const server = http.createServer((req, res) => {
 
         req.on('end', () => {
             try {
+                console.log("Received body:", body);
                 const data = JSON.parse(body);
                 const { prompt, answer } = data;
+
+                console.log("Prompt length:", prompt?.length, "Answer length:", answer?.length);
 
                 if (!prompt || !answer) {
                     res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -62,6 +68,7 @@ const server = http.createServer((req, res) => {
                 const content = formatSaveContent(prompt, answer);
 
                 fs.writeFileSync(filepath, content, 'utf8');
+                console.log("File saved to:", filepath);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({
