@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8" />
+    <title>/home/texturawasd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>texturawasd's page</h1>
+	<br>hi (🧉)<br>
+
+    <p>
+      <details>
+          <summary>You can contact me on<abbr title="(click to expand)">&nbsp;</abbr></summary> 
+        <abbr title="(formerly Twitter)">X</abbr>: <a href="https://x.com/texturawasd" target="_blank">@texturawasd</a><br>
+        Bluesky: <a href="https://bsky.app/profile/texturawasd.bsky.social" target="_blank">@texturawasd.bsky.social</a><br>
+        Steam: <a href="https://steamcommunity.com/id/texturawasd/" target="_blank">texturawasd</a><br>
+        Instagram: <a href="https://www.instagram.com/texturawasd/" target="_blank">texturawasd</a><br>
+        Signal: <a href="https://signal.me/#eu/vmPwLPTc3_rsViKOyuFu92KsBBVtzkVRHPcDGw2pFwAcLl8BdmdDBr7crJ3nYCB6" target="_blank">texturawasd.59</a><br>
+        discord: texturawasd<br>
+        or email me: <a href="mailto:texturawasd@gmail.com"> texturawasd@gmail.com</a></p>
+    </details>
+
+    -&gt; Caddy server v2.11.3 at texturawasd.ddns.net, host: <abbr title="running on my pc in my house">Arch Linux</abbr> <br>
+
+        <div>
+            <a class="btn" href="/files"><abbr title="just file storage, that's it">Files</abbr></a>
+            <a class="btn" href="https://github.com/texturawasd"><abbr title="some projects on github so its nice to look at">Github</abbr></a>
+        </div>
+        <i>Malo periculosam libertatem quam quietum servitium<abbr title="Quote from buzzheavier.com, fucking based and the best file hosting service ever">.</abbr></i>
+  </div>
+</body>
+</html>
+

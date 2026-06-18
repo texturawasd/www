@@ -1,0 +1,94 @@
+:root {
+    --bg: #0f0f12;
+    --panel: #1b1b1b;
+    --text: #e6e6eb;
+    --muted: #9a9aaa;
+    --accent: #4caf50;
+    --accent-dim: #325f35;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    /* font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; */
+      font-family: 'Ubuntu', sans-serif;
+    /*background: radial-gradient(circle at top, #181b21 0%, #0b0c0f 60%); */
+    background: radial-gradient(circle at top, #1f1e1e 0%, #111111 60%);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px; /* add some padding around edges */
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid #1b1b1d;
+    border-radius: 12px;
+    padding: 28px 32px;
+    width: 100%;
+    max-width: 960px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 14px; /* you can tune this */
+    position: relative;
+}
+
+.ipbox {
+    background: #0c0e11;
+    border: 1px solid #22252b;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: monospace;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.copy-btn {
+    font-family: inherit;
+    font-size: .9rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--accent-dim);
+    background: rgba(76,175,80,.15);
+    color: var(--accent);
+    cursor: pointer;
+}
+
+.copy-btn:active {
+    transform: scale(.97);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #325f35;
+    background: rgba(76,175,80,.15);
+    color: #4caf50;
+    text-decoration: none;
+    font-size: .95rem;
+    cursor: pointer;
+    align-self: flex-start;
+}
+.btn:hover {
+    background: rgba(76,175,80,.25);
+}
+
+
+
+
+h1 {
+    margin-top: 0;
+}
+
+p {
+    margin: 0;
+}

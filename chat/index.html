@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>/home/texturawasd/ai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        textarea {
+            width: 100%;
+            min-height: 8em;
+
+            background: #0c0e11;
+            color: var(--text);
+
+            border: 1px solid #22252b;
+            border-radius: 8px;
+
+            padding: 12px;
+
+            font: inherit;
+
+            resize: vertical;
+        }
+
+        #out {
+            background: #0c0e11;
+
+            border: 1px solid #22252b;
+            border-radius: 8px;
+
+            padding: 12px;
+
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+
+            min-height: 5em;
+
+            font-family: monospace;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: .9rem;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+<div class="card">
+
+    <h1>Ask AI</h1>
+    <h3>Except it doesn't use water, and the electricity and harware were paid for and run ethically.</h3>
+
+    <p>
+    qwen3:4b on <a href="info">my old gaming PC</a>
+        <span class="muted">(it's slow)</span>
+    </p>
+
+    <textarea
+        id="prompt"
+        placeholder="ask something..."
+    ></textarea>
+
+    <div class="toolbar">
+        <button class="btn" onclick="ask()">
+            Ask
+        </button>
+
+        <span id="status" class="muted"></span>
+    </div>
+
+    <div id="out">
+        
+    </div>
+
+    <p>
+        <a href="/">← home</a>
+    </p>
+
+</div>
+
+<script>
+
+async function ask() {
+
+    const prompt = document.getElementById("prompt").value;
+
+    const out = document.getElementById("out");
+
+    const status = document.getElementById("status");
+
+    out.textContent = "";
+
+    status.textContent = "thinking...";
+
+    try {
+
+        const response = await fetch("/ai/api/chat", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+                model: "qwen3:4b",
+
+                messages: [
+                    {
+                        role: "user",
+
+                        content: prompt
+                    }
+                ],
+
+                stream: true
+
+            })
+
+        });
+
+        const reader = response.body.getReader();
+
+        const decoder = new TextDecoder();
+
+        let buffer = "";
+
+        let markdown = "";
+
+        while (true) {
+
+            const { value, done } = await reader.read();
+
+            if (done)
+                break;
+
+            buffer += decoder.decode(value, {
+                stream: true
+            });
+
+            const lines = buffer.split("\n");
+
+            buffer = lines.pop();
+
+            for (const line of lines) {
+
+                if (!line.trim())
+                    continue;
+
+                const json = JSON.parse(line);
+
+                if (json.message?.content) {
+
+                    markdown += json.message.content;
+
+                    /*
+                     * Faster:
+                     *
+                     * out.textContent = markdown;
+                     *
+                     * Prettier:
+                     */
+
+                    out.innerHTML =
+                        marked.parse(markdown);
+
+                }
+
+                if (json.done) {
+
+                    status.textContent = "";
+
+                }
+
+            }
+
+        }
+
+    }
+
+    catch (e) {
+
+        console.error(e);
+
+        status.textContent = "error";
+
+        out.textContent = e;
+
+    }
+
+}
+
+document
+    .getElementById("prompt")
+    .addEventListener("keydown", e => {
+
+        if (e.key === "Enter"
+            && !e.shiftKey) {
+
+            e.preventDefault();
+
+            ask();
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

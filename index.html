@@ -1,147 +1,148 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>SaveBite — Ofertas de último momento</title>
-    <link rel="stylesheet" href="styles.css" />
-      <link rel="icon" href="leaf-transparent.png" type="image/png" />
-  </head>
-  <body>
-    <div id="loginScreen" class="login-screen">
-      <div class="login-card">
-        <h2>Bienvenido a SaveBite</h2>
-        <label class="lbl">Email
-          <input id="loginEmail" type="email" placeholder="tu@ejemplo.com" />
-        </label>
-        <label class="lbl">Contraseña (mín 8 caracteres)
-          <input id="loginPassword" type="password" minlength="8" placeholder="********" />
-        </label>
-        <label class="lbl">Nombre
-          <input id="loginName" type="text" placeholder="Tu nombre completo (opcional)" />
-        </label>
-        <label class="lbl">Teléfono
-          <input id="loginPhone" type="tel" placeholder="+598 99 123 456 (opcional)" />
-        </label>
-        <div class="login-actions">
-          <button id="generateDemo" class="btn">Generar demo</button>
-          <button id="loginBtn" class="btn primary">Iniciar sesión</button>
-        </div>
-        <div style="margin-top:8px;text-align:center">
-          <button id="businessBtn" class="btn business">¿Eres un negocio? Click aquí</button>
-        </div>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>/home/texturawasd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div id="appContent">
-    <header class="site-header">
-      <div class="brand">
-        <div class="logo"><img src="leaf.png" alt="SaveBite logo" /></div>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>texturawasd's page</h1>
+
+        <p>hi (🧉)</p>
+
+        <details>
+            <summary>
+                You can contact me on
+                <abbr title="(click to expand)">&nbsp;</abbr>
+            </summary>
+
+            <p>
+                <abbr title="(formerly Twitter)">X</abbr>:
+                <a
+                    href="https://x.com/texturawasd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    @texturawasd
+                </a>
+                <br>
+
+                Bluesky:
+                <a
+                    href="https://bsky.app/profile/texturawasd.bsky.social"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    @texturawasd.bsky.social
+                </a>
+                <br>
+
+                Steam:
+                <a
+                    href="https://steamcommunity.com/id/texturawasd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    texturawasd
+                </a>
+                <br>
+
+                Instagram:
+                <a
+                    href="https://www.instagram.com/texturawasd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    texturawasd
+                </a>
+                <br>
+
+                Signal:
+                <a
+                    href="https://signal.me/#eu/vmPwLPTc3_rsViKOyuFu92KsBBVtzkVRHPcDGw2pFwAcLl8BdmdDBr7crJ3nYCB6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    texturawasd.59
+                </a>
+                <br>
+
+                Discord: texturawasd
+                <br>
+
+                or email me:
+                <a href="mailto:texturawasd@gmail.com">
+                    texturawasd@gmail.com
+                </a>
+            </p>
+        </details>
+<!--
+        <p>
+            -&gt; Caddy server v2.11.3 at texturawasd.ddns.net, host:
+            <abbr title="running on my pc in my house">
+                Arch Linux
+            </abbr>
+        </p>
+-->
+        <details>
+            <summary>
+                This page
+                <abbr title="(click to expand)">&nbsp;</abbr>
+            </summary>
+            <p>
+            Caddy server v2.11.3 at texturawasd.ddns.net<br>
+            host: <a 
+                      href="https://archlinux.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  > 
+                      <abbr title="Arch Linux, the archi-distro">archlinux,</abbr>
+                  </a>
+                  <a href="/info"
+                            > <abbr title="in my home">running on my pc</abbr>
+                  </a>
+            </p>
+        </details>
+
         <div>
-          <h1 class="title">SaveBite</h1>
-          <p class="tag small">Ofertas de último minuto en tus restaurantes cercanos</p>
+            <a class="btn" href="/files">
+                <abbr title="just file storage, that's it">Files</abbr>
+            </a>
+
+            <a
+                class="btn"
+                href="https://github.com/texturawasd"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <abbr title="some projects on github so its nice to look at">
+                    Github
+                </abbr>
+            </a>
+        
+            <a class="btn" href="/chat">
+                <abbr title="locally run ai chat">Chat</abbr>
+            </a>
         </div>
-      </div>
-      <div class="controls">
-        <button id="menuBtn" class="btn" aria-label="Menu">☰</button>
-        <div class="profile-wrap">
-          <button id="profileBtn" class="btn profile" aria-label="Perfil">👤</button>
-          <div id="profileMenu" class="dropdown hidden">
-              <div id="profileName" style="font-weight:700"></div>
-              <div id="profilePhone" style="color:var(--muted);font-size:13px;margin-top:4px"></div>
-              <div id="profileId" style="color:var(--muted);font-size:13px;margin-top:4px"></div>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <main class="layout">
-      <section class="list-panel">
-        <h2>Ofertas espontáneas (últimos 30 min)</h2>
-        <div id="restaurants" class="cards"></div>
-        <div class="live-note">Avisos espontáneos: aparecen cuando quedan menos de 30 minutos.</div>
-      </section>
-    </main>
-
-    <div id="modal" class="modal hidden">
-      <div class="modal-card">
-        <h3 id="modal-title"></h3>
-        <p id="modal-body"></p>
-        <div class="modal-actions">
-          <button id="confirmReserve" class="btn primary">Reservar</button>
-          <button id="cancelReserve" class="btn">Cancelar</button>
-        </div>
-      </div>
+        <p>
+            <i>
+                Malo periculosam libertatem quam quietum servitium
+                <abbr title="Quote from buzzheavier.com, fucking based and the best file hosting service ever">
+                    .
+                </abbr>
+            </i>
+        </p>
     </div>
-
-    <div id="notifModal" class="modal hidden">
-      <div class="modal-card">
-        <h3>Notificaciones</h3>
-        <div id="notifList" style="max-height:320px;overflow:auto;margin-top:8px"></div>
-        <div class="modal-actions">
-          <button id="closeNotif" class="btn">Cerrar</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="purchaseModal" class="modal hidden">
-      <div class="modal-card">
-        <h3>Historial de compras (último mes)</h3>
-        <div id="purchaseList" style="max-height:360px;overflow:auto;margin-top:8px"></div>
-        <div class="modal-actions">
-          <button id="closePurchase" class="btn">Cerrar</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="menuDropdown" class="dropdown hidden">
-      <div class="dropdown-item" id="menuNotif">Notificaciones</div>
-      <div class="dropdown-item" id="menuHistory">Historial de compras</div>
-      <div class="dropdown-item" id="menuLogout">Cerrar sesión</div>
-    </div>
-
-    <!-- Business full-screen login/register -->
-    <div id="businessScreen" class="login-screen hidden">
-      <div class="login-card">
-        <h2>Ingreso / Registro — Negocio</h2>
-        <label class="lbl">Email
-          <input id="bizEmail" type="email" placeholder="negocio@ejemplo.com" />
-        </label>
-        <label class="lbl">Contraseña (mín 8 caracteres)
-          <input id="bizPassword" type="password" minlength="8" placeholder="********" />
-        </label>
-        <label class="lbl">Nombre del negocio
-          <input id="bizName" type="text" placeholder="Panadería La Loma" />
-        </label>
-        <label class="lbl">Dirección
-          <input id="bizAddress" type="text" placeholder="Av. Ejemplo 123" />
-        </label>
-        <label class="lbl">Teléfono
-          <input id="bizPhone" type="tel" placeholder="+598 99 123 456" />
-        </label>
-        <label class="lbl">Categoría
-          <input id="bizCategory" type="text" placeholder="Cafetería" />
-        </label>
-        <div class="login-actions">
-          <button id="bizBack" class="btn">Volver</button>
-          <button id="bizDemo" class="btn">Agregar demo</button>
-          <button id="bizRegister" class="btn primary">Entrar</button>
-        </div>
-      </div>
-    </div>
-    </div>
-
-    <!-- Business dashboard (visible after business login) -->
-    <div id="bizDashboard" class="panel hidden" style="padding:18px;max-width:900px;margin:18px auto;border-radius:12px;background:var(--card)">
-      <h2>Panel del negocio</h2>
-      <div id="bizInfo" style="margin-top:6px;color:var(--muted)"></div>
-      <div class="login-actions" style="margin-top:12px">
-        <button id="bizAddOffer" class="btn">Agregar oferta</button>
-        <button id="bizClosePanel" class="btn">Cerrar panel</button>
-      </div>
-      <div id="bizOffers" style="margin-top:14px"></div>
-    </div>
-
-    <script src="app.js"></script>
-  </body>
+</body>
 </html>

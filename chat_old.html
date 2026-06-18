@@ -1,0 +1,38 @@
+<!doctype html>
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<textarea id="prompt"></textarea>
+<button onclick="ask()">Ask</button>
+
+<pre id="out"></pre>
+
+<script>
+async function ask() {
+    const prompt = document.getElementById("prompt").value;
+
+    const r = await fetch("/ai/api/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            model: "qwen3:4b",
+            messages: [
+                {
+                    role: "user",
+                    content: prompt
+                }
+            ],
+            stream: false
+        })
+    });
+
+    const j = await r.json();
+
+    document.getElementById("out").textContent =
+        j.message.content;
+}
+</script>
