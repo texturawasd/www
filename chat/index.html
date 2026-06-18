@@ -189,6 +189,9 @@ async function ask() {
 
                     status.textContent = "";
 
+                    // Save the answer with prompt
+                    await saveAnswer(prompt, markdown);
+
                 }
 
             }
@@ -207,6 +210,24 @@ async function ask() {
 
     }
 
+}
+
+async function saveAnswer(prompt, answer) {
+    try {
+        const response = await fetch("/chat/api/save", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ prompt, answer })
+        });
+
+        if (!response.ok) {
+            console.error("Failed to save answer");
+        }
+    } catch (e) {
+        console.error("Error saving answer:", e);
+    }
 }
 
 document
